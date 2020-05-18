@@ -1,0 +1,19 @@
+<resources>
+    <!-- URIS -->
+    <string name="uri_privacy">https://www.iubenda.com/privacy-policy/40822199/full-legal</string>
+    <string name="uri_terms">https://www.designitalianshoes.com/it/termini-condizioni</string>
+
+    <!-- locale strings -->
+    <string name="app_name">DIS foot</string>
+    <string name="boarding_button_text">GET STARTED</string>
+    <string name="boarding_text">DIS - Design Italian Shoes, is a winning solution for those who want to stand out and express their personality designing and wearing classic customised shoes for men - 100% Made in Italy.\n Scan your feet and customize your shoes on ​www.designitalianshoes.com​</string>
+    <string name="boarding_title">YOUR TOUCH TO STAND OUT</string>
+    <string name="info_title">About</string>
+    <string name="info_descr1">DIS - Design Italian Shoes, is a winning solution for those who want to stand out and express their personality designing and wearing classic customised shoes for men - 100% Made in Italy.</string>
+    <string name="info_descr2">Scan your feet and customize your shoes on \n <b><u><a href="https://www.designitalianshoes.com/">https://www.designitalianshoes.com/</a></u></b></string>
+    <string name="register_privacy_text"><b><u><a href="https://www.iubenda.com/privacy-policy/40822199/full-legal">Privacy Policy</a></u></b></string>
+    <string name="register_mail_hint">mario@gmail.com</string>
+    <string name="register_name_hint">Mario Rossi</string>
+
+
+</resources>

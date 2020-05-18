@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="White">#ffffff</color>
+    <color name="Black">#000000</color>
+    <color name="TextBoxBorder">#969696</color>
+    <color name="chip_light_blue">#72A2FB</color>
+    <color name="separator_color">#BCBBC1</color>
+
+</resources>

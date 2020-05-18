@@ -1,0 +1,34 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+    <style name="style_dis_button_white">
+        <item name="android:background">@drawable/dis_button_white</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/Black</item>
+    </style>
+
+    <style name="style_dis_button_black">
+        <item name="android:background">@drawable/dis_button_black</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+    <style name="dis_button_transparent">
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="dis_textinputbox">
+        <item name="android:background">@drawable/dis_textbox</item>
+        <item name="android:ems">10</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:paddingLeft">20.5dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+</resources>

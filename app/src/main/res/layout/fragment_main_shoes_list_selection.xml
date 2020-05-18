@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.FragmentMainShoesListSelection">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="84dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:src="@drawable/ic_logo_dis"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/fragmentMainBtnInfo"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="11dp"
+            android:src="@drawable/ic_ico_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/fragmentMainContainerNoMesuarement"
+            android:layout_width="323dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="183dp"
+                android:layout_height="124dp"
+                android:src="@drawable/ic_placeholder_shoes" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_bold"
+                android:gravity="center"
+                android:text="Make your first measurement"
+                android:textColor="@color/Black"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans"
+                android:gravity="center"
+                android:text="There are no saved models yet. Start now by pressing the button at the bottom."
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/fragmentMainBtnTutorial"
+            style="@style/style_dis_button_white"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="43dp"
+            android:layout_marginEnd="43dp"
+            android:layout_marginBottom="21dp"
+            android:contentDescription="Watch our video tutorial"
+            android:padding="10dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_ico_youtube"
+            app:layout_constraintBottom_toTopOf="@+id/fragmentMainBtnMeasurement"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"></ImageButton>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans"
+            android:text="Watch our video tutorial"
+            android:textColor="@color/Black"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fragmentMainBtnTutorial"
+            app:layout_constraintEnd_toEndOf="@+id/fragmentMainBtnTutorial"
+            app:layout_constraintStart_toStartOf="@+id/fragmentMainBtnTutorial"
+            app:layout_constraintTop_toTopOf="@+id/fragmentMainBtnTutorial" />
+
+        <Button
+            android:id="@+id/fragmentMainBtnMeasurement"
+            style="@style/style_dis_button_black"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="43dp"
+            android:layout_marginEnd="43dp"
+            android:layout_marginBottom="8dp"
+            android:text="New measurement"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>
