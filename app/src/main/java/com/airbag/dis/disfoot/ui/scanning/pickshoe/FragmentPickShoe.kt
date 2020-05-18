@@ -1,11 +1,11 @@
-package com.airbag.dis.disfoot.ui.scanning
+package com.airbag.dis.disfoot.ui.scanning.pickshoe
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -19,7 +19,8 @@ import kotlinx.android.synthetic.main.fragment_pick_shoe.*
 class FragmentPickShoe : Fragment() {
 
     private val commonViewModel: ViewModelCommon by activityViewModels()
-    val adapter : ShoesCollectionAdapter = ShoesCollectionAdapter(mapOf())
+    val adapter : ShoesCollectionAdapter =
+        ShoesCollectionAdapter(mapOf())
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +37,13 @@ class FragmentPickShoe : Fragment() {
         commonViewModel.shoesModels.observe(this.viewLifecycleOwner, Observer {
 
             adapter.shoesCollection = it
+            adapter.setOnShoeSelectedListener(object : IShoeSelected {
+                override fun onShoeSelected(id: String) {
+                    commonViewModel.selectedShoeId.value = id
+                    Toast.makeText(context,"Shoe selected : $id",Toast.LENGTH_LONG).show()
+                    findNavController().navigate(FragmentPickShoeDirections.toFragmentScanInstructions())
+                }
+            })
             adapter.notifyDataSetChanged()
             //fragmentPickRecycler.adapter = ShoesCollectionAdapter(it).also { it.notifyDataSetChanged() }
         })

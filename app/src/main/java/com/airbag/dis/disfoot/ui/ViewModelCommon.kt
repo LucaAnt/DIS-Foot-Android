@@ -13,6 +13,8 @@ class ViewModelCommon : ViewModel() {
         emit(data)
     }
 
+    var selectedShoeId : MutableLiveData<String> = MutableLiveData()
+
 
 //    private fun loadShoes()
 //    {

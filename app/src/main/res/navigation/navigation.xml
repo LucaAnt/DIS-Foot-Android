@@ -76,7 +76,16 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentPickShoe"
-        android:name="com.airbag.dis.disfoot.ui.scanning.FragmentPickShoe"
+        android:name="com.airbag.dis.disfoot.ui.scanning.pickshoe.FragmentPickShoe"
         android:label="fragment_pick_shoe"
-        tools:layout="@layout/fragment_pick_shoe" />
+        tools:layout="@layout/fragment_pick_shoe" >
+        <action
+            android:id="@+id/to_fragmentScanInstructions"
+            app:destination="@id/fragmentScanInstructions" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentScanInstructions"
+        android:name="com.airbag.dis.disfoot.ui.scanning.FragmentScanInstructions"
+        android:label="fragment_scan_instructions"
+        tools:layout="@layout/fragment_scan_instructions" />
 </navigation>

@@ -15,5 +15,13 @@
     <string name="register_mail_hint">mario@gmail.com</string>
     <string name="register_name_hint">Mario Rossi</string>
 
+    <string name="istr_title">To scan your feet you need:</string>
+    <string name="istr_1"><b>A well-lit area</b> without glare</string>
+    <string name="istr_2"><b>A standard sheet of white paper</b> (A4 or US letter) with no bends or wrinkles</string>
+    <string name="istr_3"><b>A hard floor of a color that contrasts</b> with your feet and twith the white sheet of paper</string>
+    <string name="istr_4"><b>Roll up your pants</b></string>
+    <string name="istr_5"><b>Bare feet no socks</b></string>
+    <string name="istr_6"><b>Sit down throughout the whole scanning process.</b> Optionally ask someone to take photos</string>
+
 
 </resources>
