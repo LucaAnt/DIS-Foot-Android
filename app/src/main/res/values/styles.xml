@@ -31,4 +31,8 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="styleDeselected">
+        <item name="android:alpha">0.2</item>
+    </style>
+
 </resources>

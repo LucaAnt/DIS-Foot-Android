@@ -87,5 +87,14 @@
         android:id="@+id/fragmentScanInstructions"
         android:name="com.airbag.dis.disfoot.ui.scanning.FragmentScanInstructions"
         android:label="fragment_scan_instructions"
-        tools:layout="@layout/fragment_scan_instructions" />
+        tools:layout="@layout/fragment_scan_instructions" >
+        <action
+            android:id="@+id/toFragmentPaperSexNameSelection"
+            app:destination="@id/fragmentPaperSexNameSelection" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentPaperSexNameSelection"
+        android:name="com.airbag.dis.disfoot.ui.scanning.FragmentPaperSexNameSelection"
+        android:label="fragment_paper_sex_name_selection"
+        tools:layout="@layout/fragment_paper_sex_name_selection" />
 </navigation>

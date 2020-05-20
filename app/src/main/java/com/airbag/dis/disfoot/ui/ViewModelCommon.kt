@@ -13,16 +13,23 @@ class ViewModelCommon : ViewModel() {
         emit(data)
     }
 
-    var selectedShoeId : MutableLiveData<String> = MutableLiveData()
-
-
-//    private fun loadShoes()
+    //    private fun loadShoes()
 //    {
 //        viewModelScope.launch {
 //            val result = disService.dis.getShoesModels()
 //            shoesModels.postValue(result)
 //        }
 //    }
+
+    var selectedShoeId : MutableLiveData<String> = MutableLiveData()
+
+    var selectedSex : MutableLiveData<String> = MutableLiveData("M")
+
+    var selectedPaper : MutableLiveData<String> = MutableLiveData("A4")
+
+    var selectedName  : MutableLiveData<String> = MutableLiveData("")
+
+
 
 
 

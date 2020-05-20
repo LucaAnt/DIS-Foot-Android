@@ -5,16 +5,20 @@
 
     <!-- locale strings -->
     <string name="app_name">DIS foot</string>
+
+    <!-- locale BOARDING -->
     <string name="boarding_button_text">GET STARTED</string>
     <string name="boarding_text">DIS - Design Italian Shoes, is a winning solution for those who want to stand out and express their personality designing and wearing classic customised shoes for men - 100% Made in Italy.\n Scan your feet and customize your shoes on ​www.designitalianshoes.com​</string>
     <string name="boarding_title">YOUR TOUCH TO STAND OUT</string>
+    <!-- locale INFO -->
     <string name="info_title">About</string>
     <string name="info_descr1">DIS - Design Italian Shoes, is a winning solution for those who want to stand out and express their personality designing and wearing classic customised shoes for men - 100% Made in Italy.</string>
     <string name="info_descr2">Scan your feet and customize your shoes on \n <b><u><a href="https://www.designitalianshoes.com/">https://www.designitalianshoes.com/</a></u></b></string>
+    <!-- locale REGISTER -->
     <string name="register_privacy_text"><b><u><a href="https://www.iubenda.com/privacy-policy/40822199/full-legal">Privacy Policy</a></u></b></string>
     <string name="register_mail_hint">mario@gmail.com</string>
     <string name="register_name_hint">Mario Rossi</string>
-
+    <!-- locale INSTRUCTIONS-->
     <string name="istr_title">To scan your feet you need:</string>
     <string name="istr_1"><b>A well-lit area</b> without glare</string>
     <string name="istr_2"><b>A standard sheet of white paper</b> (A4 or US letter) with no bends or wrinkles</string>
@@ -22,6 +26,20 @@
     <string name="istr_4"><b>Roll up your pants</b></string>
     <string name="istr_5"><b>Bare feet no socks</b></string>
     <string name="istr_6"><b>Sit down throughout the whole scanning process.</b> Optionally ask someone to take photos</string>
-
+    <!-- SEX PAPER NAME SELECTION -->
+    <string name="papersexselection_title">New feet scan</string>
+    <string name="papersexselection_paper">Select the size of the paper</string>
+    <string name="papersexselection_paperA4"><c><b>210 x 297 mm\n8,27 x 11,69 inches</b></c></string>
+    <string name="papersexselection_paperLetter"><c><b>215,9 x 279,4 mm\n8,5 x 11 inches</b></c></string>
+    <string name="papersexselection_sex">Indicate your gender</string>
+    <string name="papersexselection_sexMale">MALE</string>
+    <string name="papersexselection_sexFemale">FEMALE</string>
+    <string name="papersexselection_scanLabel">Give a name to your scan (optional)</string>
+    <string name="papersexselection_optionalLabel">Optional</string>
+    <string name="papersexselection_nextButton">Continue</string>
+    <string name="papersexselection_DialogTitle">Give a name to your scan</string>
+    <string name="papersexselection_DialogOk">Submit</string>
+    <string name="papersexselection_DialogCancel">Cancel</string>
+    <string name="fragmentSelectionDialogText">Give a name to Your Scan</string>
 
 </resources>
