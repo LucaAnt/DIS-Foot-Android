@@ -30,14 +30,44 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <Button
+            android:id="@+id/fragmentScanSeqBackBtn"
+            style="@style/dis_button_transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:capitalize="none"
+            android:fontFamily="@font/open_sans_semibold"
+            android:padding="10dp"
+            android:text="@string/fragmentScanButtonBack"
+            android:textAllCaps="false"
+            android:textColor="@color/White"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/fragmentScanSeqExitBtn"
+            style="@style/dis_button_transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:capitalize="none"
+            android:fontFamily="@font/open_sans_semibold"
+            android:padding="10dp"
+            android:text="@string/fragmentScanButtonExit"
+            android:textAllCaps="false"
+            android:textColor="@color/White"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="72dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/fragmentScanSeqBackBtn">
 
             <ImageView
                 android:id="@+id/fragmentScanSeqFootImage"
@@ -103,9 +133,10 @@
             android:text="@string/fragmentScanRightMainText"
             android:textColor="@color/White"
             android:textSize="16sp"
+            app:autoSizeTextType="uniform"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragmentScanSeqGuideImage" />
+            app:layout_constraintTop_toBottomOf="@+id/guideline2" />
 
         <Button
             android:id="@+id/fragmentScanSeqNextBtn"
@@ -114,10 +145,11 @@
             android:layout_height="50dp"
             android:layout_marginStart="19dp"
             android:layout_marginEnd="24dp"
-            android:layout_marginBottom="59dp"
             android:text="@string/fragmentScanButtonMain"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragmentScanSeqText" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

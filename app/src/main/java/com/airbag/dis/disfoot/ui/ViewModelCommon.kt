@@ -39,7 +39,7 @@ class ViewModelCommon : ViewModel() {
 
     var observedScanSteps : MutableLiveData<MutableList<ScanStep>> = MutableLiveData(mutableListOf())
 
-    public fun nextStep(context : Context,measeure : Int?)
+    fun nextStep(context : Context,measeure : Int?)
     {
             when (scanSteps.count()) {
                 0->scanSteps.add(ScanStep(context,RIGHT,MAIN))
@@ -62,6 +62,12 @@ class ViewModelCommon : ViewModel() {
         observedScanSteps.value = scanSteps
     }
 
+    fun resetScanSequence()
+    {
+        scanSteps  = mutableListOf<ScanStep>()
+        observedScanSteps.value = scanSteps
+    }
+
     enum class Feet{
         RIGHT,LEFT
     }
@@ -72,49 +78,49 @@ class ViewModelCommon : ViewModel() {
 
     class ScanStep(var context : Context, val feet : Feet, val side : Side)
     {
-        val title : String
+        val title : CharSequence
         get() {
             when(feet)
             {
                 RIGHT ->
                                 when (side)
                                 {
-                                    MAIN -> return context.getString(R.string.fragmentScanRightMainTitle)
-                                    INNER -> return context.getString(R.string.fragmentScan1RightInnerTitle)
-                                    TOP ->return context.getString(R.string.fragmentScan2RightTopTitle)
-                                    OUTER -> return context.getString(R.string.fragmentScan3RightOuterTitle)
+                                    MAIN -> return context.getText(R.string.fragmentScanRightMainTitle) //context.getText(R.string.fragmentScanRightMainTitle)
+                                    INNER -> return context.getText(R.string.fragmentScan1RightInnerTitle)
+                                    TOP ->return context.getText(R.string.fragmentScan2RightTopTitle)
+                                    OUTER -> return context.getText(R.string.fragmentScan3RightOuterTitle)
                                 }
                 LEFT ->
                                 when (side)
                                 {
-                                    MAIN -> return context.getString(R.string.fragmentScanLeftMainTitle)
-                                    INNER -> return context.getString(R.string.fragmentScan4LeftInnerTitle)
-                                    TOP ->return context.getString(R.string.fragmentScan5LeftTopTitle)
-                                    OUTER -> return context.getString(R.string.fragmentScan6LeftOuterTitle)
+                                    MAIN -> return context.getText(R.string.fragmentScanLeftMainTitle)
+                                    INNER -> return context.getText(R.string.fragmentScan4LeftInnerTitle)
+                                    TOP ->return context.getText(R.string.fragmentScan5LeftTopTitle)
+                                    OUTER -> return context.getText(R.string.fragmentScan6LeftOuterTitle)
                                 }
             }
             return ""
         }
 
-        val text : String
+        val text : CharSequence
             get() {
                 when(feet)
                 {
                     RIGHT ->
                         when (side)
                         {
-                            MAIN -> return context.getString(R.string.fragmentScanRightMainText)
-                            INNER -> return context.getString(R.string.fragmentScan1RightInnerText)
-                            TOP ->return context.getString(R.string.fragmentScan2RightTopText)
-                            OUTER -> return context.getString(R.string.fragmentScan3RightOuterText)
+                            MAIN -> return context.getText(R.string.fragmentScanRightMainText)
+                            INNER -> return context.getText(R.string.fragmentScan1RightInnerText)
+                            TOP ->return context.getText(R.string.fragmentScan2RightTopText)
+                            OUTER -> return context.getText(R.string.fragmentScan3RightOuterText)
                         }
                     LEFT ->
                         when (side)
                         {
-                            MAIN -> return context.getString(R.string.fragmentScanLefttMainText)
-                            INNER -> return context.getString(R.string.fragmentScan4LefttInnerText)
-                            TOP ->return context.getString(R.string.fragmentScan5LeftTopText)
-                            OUTER -> return context.getString(R.string.fragmentScan6LeftOuterText)
+                            MAIN -> return context.getText(R.string.fragmentScanLefttMainText)
+                            INNER -> return context.getText(R.string.fragmentScan4LefttInnerText)
+                            TOP ->return context.getText(R.string.fragmentScan5LeftTopText)
+                            OUTER -> return context.getText(R.string.fragmentScan6LeftOuterText)
                         }
                 }
                 return ""

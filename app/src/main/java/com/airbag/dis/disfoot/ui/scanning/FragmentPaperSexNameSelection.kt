@@ -6,7 +6,10 @@ import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.core.view.forEach
@@ -37,7 +40,8 @@ class FragmentPaperSexNameSelection : Fragment(), View.OnClickListener {
         fragmentSelectionMaleView.setOnClickListener(this)
         fragmentSelectionFemaleView.setOnClickListener(this)
         fragmentSelectionScanNameInput.setOnClickListener { popscanNameInputDialog() }
-        fragmentSelectionBtnNext.setOnClickListener { findNavController().navigate(FragmentPaperSexNameSelectionDirections.toScanningSequence())}
+        fragmentSelectionBtnNext.setOnClickListener { commonViewModel.resetScanSequence()
+            findNavController().navigate(FragmentPaperSexNameSelectionDirections.toScanningSequence())}
 
         commonViewModel.selectedPaper.observe(viewLifecycleOwner, Observer {
             resetAllviewsToDeselectedFor(Section.PAPER)

@@ -24,7 +24,7 @@
     <string name="istr_2"><b>A standard sheet of white paper</b> (A4 or US letter) with no bends or wrinkles</string>
     <string name="istr_3"><b>A hard floor of a color that contrasts</b> with your feet and twith the white sheet of paper</string>
     <string name="istr_4"><b>Roll up your pants</b></string>
-    <string name="istr_5"><b>Bare feet no socks</b></string>
+    <string name="istr_5"><b>Bare feet  no socks</b></string>
     <string name="istr_6"><b>Sit down throughout the whole scanning process.</b> Optionally ask someone to take photos</string>
     <!-- SEX PAPER NAME SELECTION -->
     <string name="papersexselection_title">New feet scan</string>
@@ -43,36 +43,39 @@
     <string name="fragmentSelectionDialogText">Give a name to Your Scan</string>
 
     <!-- FEET SCAN SEQUENCE FRAGMENT -->
+    <string name="fragmentScanButtonBack">Back</string>
+    <string name="fragmentScanButtonExit">Exit</string>
+
     <string name="fragmentScanCounter">Picture %d of %d</string>
     <string name="fragmentScanButton">Ok, let\'s take the picture %n</string>
     <string name="fragmentScanButtonMain">Start</string>
 
     <!-- RIGHT-->
-    <string name="fragmentScanRightMainTitle">Start with the <c>right</c> foot</string>
+    <string name="fragmentScanRightMainTitle">Start with the <font color='#7ED321'>right</font> foot</string>
     <string name="fragmentScanRightMainSubtitle">You are going to take <b>3 photos</b> of the right foot.</string>
     <string name="fragmentScanRightMainText"><b>Please sit down and place your foot on the sheet as shown in the picture and follow the instructions on the screen.</b>\n\nYou are going to take <b>3 photos</b> of the right foot.\n\nRemember to stand comfortably, because you <b>MUST NOT MOVE</b> the right foot from photos 1 until you take photo 3.</string>
 
-    <string name="fragmentScan1RightInnerTitle"><c>Right</c> Inner Side</string>
+    <string name="fragmentScan1RightInnerTitle"><font color='#7ED321'>Right</font> Inner Side</string>
     <string name="fragmentScan1RightInnerText">Take a photo like the one you see above by following these tips.\n\nAim the camera at the <b>inner side</b> of your right foot.\n\nMake sure that the <b>four corners</b> of the sheet of paper​<b>are visible.</b>\n\nMake sure that the​<b>heel is included in the image.</b></string>
 
-    <string name="fragmentScan2RightTopTitle"><c>Right</c> Top Side</string>
+    <string name="fragmentScan2RightTopTitle"><font color='#7ED321'>Right</font> Top Side</string>
     <string name="fragmentScan2RightTopText">Take a photo like the one you see above by following these tips.\n\nRotate your phone in landscape mode and <b>tilt it</b> slightly <b>outwards</b> until the red and grey outlines merge and become green.\n\nMake sure that the​<b>four corners</b> of the sheet of paper <b>are visible.</b></string>
 
-    <string name="fragmentScan3RightOuterTitle"><c>Right</c> Outer Side</string>
+    <string name="fragmentScan3RightOuterTitle"><font color='#7ED321'>Right</font> Outer Side</string>
     <string name="fragmentScan3RightOuterText">Take a photo like the one you see above by following these tips.\n\nAim the camera at the <b>outer side</b> of your right foot.\n\nMake sure that the <b>four corners​</b> of the sheet of paper <b>are visible.</b>\n\nMake sure that the <b>heel is included in the image.</b></string>
 
     <!-- LEFT-->
-    <string name="fragmentScanLeftMainTitle">Now  with the <c>left</c> foot</string>
+    <string name="fragmentScanLeftMainTitle">Now  with the <font color='#F8E71C'>left</font> foot</string>
     <string name="fragmentScanLeftMainSubtitle">You are going to take <b>3 photos</b> of the left foot.</string>
     <string name="fragmentScanLefttMainText">Please, stay seated and place your foot on the sheet as shown in the picture and follow the instructions on the screen.\n\nYou are going to take <b>3 photos</b> of the left foot.\n\nRemember to stand comfortably, because you <b>MUST NOT MOVE</b> the left foot from photos 1 until you take photo 3.</string>
 
-    <string name="fragmentScan4LeftInnerTitle"><c>Left</c> Inner Side</string>
+    <string name="fragmentScan4LeftInnerTitle"><font color='#F8E71C'>Left</font> Inner Side</string>
     <string name="fragmentScan4LefttInnerText">Take a photo like the one you see above by following these tips.\n\nAim the camera at the <b>inner side</b> of your left foot.\n\nMake sure that the <b>four corners​</b> of the sheet of paper​<b>are visible.</b>\n\nMake sure that the​<b>heel is included in the image.</b></string>
 
-    <string name="fragmentScan5LeftTopTitle"><c>Left</c> Top Side</string>
+    <string name="fragmentScan5LeftTopTitle"><font color='#F8E71C'>Left</font> Top Side</string>
     <string name="fragmentScan5LeftTopText">Take a photo like the one you see above by following these tips.\n\nRotate your phone in landscape mode and <b>tilt it</b> slightly <b>outwards</b> until the red and grey outlines merge and become green.\n\nMake sure that the <b>four corners</b> of the sheet of paper <b>are visible.</b></string>
 
-    <string name="fragmentScan6LeftOuterTitle"><c>Left</c> Outer Side</string>
+    <string name="fragmentScan6LeftOuterTitle"><font color='#F8E71C'>Left</font> Outer Side</string>
     <string name="fragmentScan6LeftOuterText">Take a photo like the one you see above by following these tips.\n\nAim the camera at the <b>outer side</b> of your left foot.\n\nMake sure that the <b>four corners​</b> of the sheet of paper <b>are visible.</b>\n\nMake sure that the <b>heel is included in the image.</b></string>
 
 </resources>

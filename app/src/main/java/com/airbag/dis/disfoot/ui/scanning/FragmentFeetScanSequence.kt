@@ -1,14 +1,19 @@
 package com.airbag.dis.disfoot.ui.scanning
 
-import android.os.Bundle
+import  android.os.Bundle
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
+import com.airbag.dis.disfoot.MainNavDirections
 import com.airbag.dis.disfoot.R
 import com.airbag.dis.disfoot.ui.ViewModelCommon
 import com.airbag.dis.disfoot.ui.ViewModelCommon.Side.MAIN
@@ -26,6 +31,7 @@ class FragmentFeetScanSequence : Fragment() {
         return inflater.inflate(R.layout.fragment_feet_scan_sequence, container, false)
     }
 
+    @ExperimentalStdlibApi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         fragmentScanSeqNextBtn.setOnClickListener {
@@ -34,6 +40,15 @@ class FragmentFeetScanSequence : Fragment() {
                 null
             )
         }
+
+        fragmentScanSeqBackBtn.setOnClickListener {
+            if (commonViewModel.observedScanSteps.value?.count()!! >1)
+                commonViewModel.prevStep()
+            else
+                findNavController().popBackStack()
+        }
+
+        fragmentScanSeqExitBtn.setOnClickListener { findNavController().navigate(MainNavDirections.toMain()) }
 
         if (commonViewModel.observedScanSteps.value?.isEmpty()!!)
             commonViewModel.nextStep(requireContext(), null)
