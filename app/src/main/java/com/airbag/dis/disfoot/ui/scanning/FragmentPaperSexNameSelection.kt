@@ -13,6 +13,7 @@ import androidx.core.view.forEach
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.airbag.dis.disfoot.R
 import com.airbag.dis.disfoot.ui.ViewModelCommon
 import kotlinx.android.synthetic.main.fragment_paper_sex_name_selection.*
@@ -36,6 +37,8 @@ class FragmentPaperSexNameSelection : Fragment(), View.OnClickListener {
         fragmentSelectionMaleView.setOnClickListener(this)
         fragmentSelectionFemaleView.setOnClickListener(this)
         fragmentSelectionScanNameInput.setOnClickListener { popscanNameInputDialog() }
+        fragmentSelectionBtnNext.setOnClickListener { findNavController().navigate(FragmentPaperSexNameSelectionDirections.toScanningSequence())}
+
         commonViewModel.selectedPaper.observe(viewLifecycleOwner, Observer {
             resetAllviewsToDeselectedFor(Section.PAPER)
             when (it)
@@ -125,8 +128,8 @@ class FragmentPaperSexNameSelection : Fragment(), View.OnClickListener {
 
         input.inputType = InputType.TYPE_CLASS_TEXT
         builder.setView(input)
-        builder.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, which -> commonViewModel.selectedName.value = input.text.toString() })
-        builder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, which -> dialog.cancel() })
+        builder.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, _ -> commonViewModel.selectedName.value = input.text.toString() })
+        builder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, _ -> dialog.cancel() })
 
         builder.show()
     }

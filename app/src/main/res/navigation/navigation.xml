@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navigation"
+    android:id="@+id/main_nav"
     app:startDestination="@id/splash_start">
     <fragment
         android:id="@+id/splash_start"
@@ -14,12 +14,13 @@
             app:destination="@id/boardingFragment"
             app:enterAnim="@anim/fragment_fade_enter"
             app:exitAnim="@anim/fragment_fade_exit"
-            app:popUpTo="@id/boardingFragment"
+            app:popUpTo="@id/splash_start"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/toMainShoesSelection"
             app:destination="@id/mainShoesListSelectionFragment"
-            app:popUpTo="@id/mainShoesListSelectionFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/splash_start"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
@@ -32,7 +33,8 @@
             app:destination="@id/mainShoesListSelectionFragment"
             app:enterAnim="@anim/fragment_fade_enter"
             app:exitAnim="@anim/fragment_fade_exit"
-            app:popUpTo="@id/mainShoesListSelectionFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/boardingFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
@@ -96,5 +98,19 @@
         android:id="@+id/fragmentPaperSexNameSelection"
         android:name="com.airbag.dis.disfoot.ui.scanning.FragmentPaperSexNameSelection"
         android:label="fragment_paper_sex_name_selection"
-        tools:layout="@layout/fragment_paper_sex_name_selection" />
+        tools:layout="@layout/fragment_paper_sex_name_selection" >
+        <action
+            android:id="@+id/toScanningSequence"
+            app:destination="@id/fragmentFeetScanSequence" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentFeetScanSequence"
+        android:name="com.airbag.dis.disfoot.ui.scanning.FragmentFeetScanSequence"
+        android:label="fragment_feet_scan_sequence"
+        tools:layout="@layout/fragment_feet_scan_sequence" />
+    <action
+        android:id="@+id/toMain"
+        app:destination="@id/mainShoesListSelectionFragment"
+        app:popUpTo="@id/mainShoesListSelectionFragment"
+        app:popUpToInclusive="true" />
 </navigation>
