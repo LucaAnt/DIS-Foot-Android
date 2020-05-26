@@ -5,19 +5,18 @@ import android.content.Context
 import androidx.lifecycle.*
 import com.airbag.dis.disfoot.R
 import com.airbag.dis.disfoot.api.disApiManager
+import com.airbag.dis.disfoot.model.MeasureRequest
 import com.airbag.dis.disfoot.model.Shoe
+import com.airbag.dis.disfoot.model.ShoeSizeMeasure
+import com.airbag.dis.disfoot.model.ShoeSizeResponse
 import com.airbag.dis.disfoot.ui.ViewModelCommon.Feet.*
 import com.airbag.dis.disfoot.ui.ViewModelCommon.Side.*
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class ViewModelCommon : ViewModel() {
 
     //val shoesModels = MutableLiveData<Map<String, List<Shoe>>>().also { loadShoes() }
-
-    val shoesModels : LiveData<Map<String, List<Shoe>>> = liveData {
-        val data = disApiManager().dis.getShoesModels() // suspending
-        emit(data)
-    }
-
     //    private fun loadShoes()
 //    {
 //        viewModelScope.launch {
@@ -26,19 +25,27 @@ class ViewModelCommon : ViewModel() {
 //        }
 //    }
 
-    var selectedShoeId : MutableLiveData<String> = MutableLiveData()
+    val shoesModels : LiveData<Map<String, List<Shoe>>> = liveData {
+        val data = disApiManager().dis.getShoesModels() // suspending
+        emit(data)
+    }
 
-    var selectedSex : MutableLiveData<String> = MutableLiveData("M")
+    var currentShoeScanResult : MutableLiveData<ShoeSizeResponse> = MutableLiveData<ShoeSizeResponse>()
 
-    var selectedPaper : MutableLiveData<String> = MutableLiveData("A4")
+    val selectedShoeId : MutableLiveData<String> = MutableLiveData("11")
 
-    var selectedName  : MutableLiveData<String> = MutableLiveData("")
+    val selectedSex : MutableLiveData<String> = MutableLiveData("M")
+
+    val selectedPaper : MutableLiveData<String> = MutableLiveData("A4")
+
+    val selectedName  : MutableLiveData<String> = MutableLiveData("")
 
 
     private var scanSteps  = mutableListOf<ScanStep>()
 
-    var observedScanSteps : MutableLiveData<MutableList<ScanStep>> = MutableLiveData(mutableListOf())
+    val observedScanSteps : MutableLiveData<MutableList<ScanStep>> = MutableLiveData(mutableListOf())
 
+    var scanFinished = false
     fun nextStep(context : Context,measeure : Int?)
     {
             when (scanSteps.count()) {
@@ -49,14 +56,14 @@ class ViewModelCommon : ViewModel() {
                 4->scanSteps.add(ScanStep(context,LEFT,MAIN))
                 5->scanSteps.add(ScanStep(context,LEFT,INNER))
                 6->scanSteps.add(ScanStep(context,LEFT,TOP))
-                7->scanSteps.add(ScanStep(context,LEFT,OUTER))
+                7->scanSteps.add(ScanStep(context,LEFT,OUTER)).also { scanFinished=true }
             }
 
         observedScanSteps.value = scanSteps
     }
 
     @ExperimentalStdlibApi
-    public fun prevStep()
+    fun prevStep()
     {
         scanSteps.removeLast()
         observedScanSteps.value = scanSteps
@@ -66,6 +73,16 @@ class ViewModelCommon : ViewModel() {
     {
         scanSteps  = mutableListOf<ScanStep>()
         observedScanSteps.value = scanSteps
+        scanFinished = false
+    }
+
+    fun getScanResult()
+    {
+        viewModelScope.launch {
+            delay(5000)
+            val result = disApiManager().dis.getShoeSizeResponse(MeasureRequest.getDummyRequest())
+            currentShoeScanResult.postValue(result[selectedShoeId.value.toString()])
+        }
     }
 
     enum class Feet{

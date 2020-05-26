@@ -107,10 +107,21 @@
         android:id="@+id/fragmentFeetScanSequence"
         android:name="com.airbag.dis.disfoot.ui.scanning.FragmentFeetScanSequence"
         android:label="fragment_feet_scan_sequence"
-        tools:layout="@layout/fragment_feet_scan_sequence" />
+        tools:layout="@layout/fragment_feet_scan_sequence" >
+        <action
+            android:id="@+id/toScanResult"
+            app:destination="@id/fragmentScanResult"
+            app:popUpTo="@id/fragmentScanResult"
+            app:popUpToInclusive="true" />
+    </fragment>
     <action
         android:id="@+id/toMain"
         app:destination="@id/mainShoesListSelectionFragment"
         app:popUpTo="@id/mainShoesListSelectionFragment"
         app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/fragmentScanResult"
+        android:name="com.airbag.dis.disfoot.ui.scanning.FragmentScanResult"
+        android:label="fragment_scan_result"
+        tools:layout="@layout/fragment_scan_result" />
 </navigation>

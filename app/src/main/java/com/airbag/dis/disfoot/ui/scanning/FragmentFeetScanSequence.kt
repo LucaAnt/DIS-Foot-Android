@@ -35,10 +35,14 @@ class FragmentFeetScanSequence : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         fragmentScanSeqNextBtn.setOnClickListener {
-            commonViewModel.nextStep(
-                requireContext(),
-                null
-            )
+
+            if (!commonViewModel.scanFinished)
+                commonViewModel.nextStep(
+                    requireContext(),
+                    null
+                )
+            else
+                findNavController().navigate(FragmentFeetScanSequenceDirections.toScanResult())
         }
 
         fragmentScanSeqBackBtn.setOnClickListener {
@@ -49,6 +53,7 @@ class FragmentFeetScanSequence : Fragment() {
         }
 
         fragmentScanSeqExitBtn.setOnClickListener { findNavController().navigate(MainNavDirections.toMain()) }
+
 
         if (commonViewModel.observedScanSteps.value?.isEmpty()!!)
             commonViewModel.nextStep(requireContext(), null)
@@ -64,8 +69,10 @@ class FragmentFeetScanSequence : Fragment() {
                     MAIN -> {
                         fragmentScanSeqFootImage.visibility = GONE
                         fragmentScanSeqCounter.visibility = GONE
+                        fragmentScanSeqNextBtn.setText(R.string.fragmentScanButtonMain)
                     }
                     else -> {
+                        fragmentScanSeqNextBtn.setText(getString(R.string.fragmentScanButton,scanStep.side.ordinal))
                         if (scanStep.counterLabel != null) {
                             fragmentScanSeqFootImage.visibility = VISIBLE
                             fragmentScanSeqFootImage.setImageResource(scanStep.icoFeetImage)

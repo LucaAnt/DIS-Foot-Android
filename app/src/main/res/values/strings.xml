@@ -47,7 +47,7 @@
     <string name="fragmentScanButtonExit">Exit</string>
 
     <string name="fragmentScanCounter">Picture %d of %d</string>
-    <string name="fragmentScanButton">Ok, let\'s take the picture %n</string>
+    <string name="fragmentScanButton">Ok, let\'s take the picture %d</string>
     <string name="fragmentScanButtonMain">Start</string>
 
     <!-- RIGHT-->
@@ -77,5 +77,17 @@
 
     <string name="fragmentScan6LeftOuterTitle"><font color='#F8E71C'>Left</font> Outer Side</string>
     <string name="fragmentScan6LeftOuterText">Take a photo like the one you see above by following these tips.\n\nAim the camera at the <b>outer side</b> of your left foot.\n\nMake sure that the <b>four corners​</b> of the sheet of paper <b>are visible.</b>\n\nMake sure that the <b>heel is included in the image.</b></string>
+
+
+    <!-- FEET SCAN RESULT FRAGMENT -->
+    <string name="resultBtn">Go To Your Model Card</string>
+    <string name="resultAlertTitle">Error</string>
+    <string name="resultAlertMessage">The service is temporarily unavailable. please try again in a few minutes</string>
+
+    <string name="resultProcessingTitle">Processing data</string>
+    <string name="resultProcessingSubtitle">Take less than 10 seconds. Please wait...</string>
+
+    <string name="resultFinishedTitle">Final result</string>
+    <string name="resultFinishedSubtitle">Your number for the selected model is</string>
 
 </resources>

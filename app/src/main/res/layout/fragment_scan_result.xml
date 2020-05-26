@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.scanning.FragmentScanResult">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/backgroundImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_scanning_blurred_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/backgroundBlackOverlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.8"
+            android:background="@color/Black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/resultTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="@string/resultProcessingTitle"
+            android:textColor="@color/White"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toTopOf="@+id/resultSubtitle"
+            app:layout_constraintEnd_toEndOf="@+id/resultSubtitle"
+            app:layout_constraintStart_toStartOf="@+id/resultSubtitle"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_optimizationLevel="chains" />
+
+        <TextView
+            android:id="@+id/resultSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="@string/resultProcessingSubtitle"
+            android:textColor="@color/White"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/resultMeasure"
+            app:layout_constraintEnd_toEndOf="@id/resultMeasure"
+            app:layout_constraintStart_toStartOf="@+id/resultMeasure"
+            app:layout_constraintTop_toBottomOf="@+id/resultTitle"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_optimizationLevel="chains" />
+
+        <TextView
+            android:id="@+id/resultMeasure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="38"
+            android:textColor="@color/White"
+            android:textSize="87sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/resultAnimation"
+            app:layout_constraintEnd_toEndOf="@+id/resultAnimation"
+            app:layout_constraintStart_toStartOf="@+id/resultAnimation"
+            app:layout_constraintTop_toBottomOf="@+id/resultSubtitle"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_optimizationLevel="chains" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/resultAnimation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="waitForResult.json"
+            app:lottie_loop="true" />
+
+        <Button
+            android:id="@+id/resultBtnFinish"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="43dp"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="48dp"
+            android:text="@string/resultBtn"
+            android:textAllCaps="false"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
