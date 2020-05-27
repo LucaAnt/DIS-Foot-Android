@@ -40,7 +40,7 @@ class FragmentPaperSexNameSelection : Fragment(), View.OnClickListener {
         fragmentSelectionMaleView.setOnClickListener(this)
         fragmentSelectionFemaleView.setOnClickListener(this)
         fragmentSelectionScanNameInput.setOnClickListener { popscanNameInputDialog() }
-        fragmentSelectionBtnNext.setOnClickListener { commonViewModel.resetScanSequence()
+        fragmentSelectionBtnNext.setOnClickListener {
             findNavController().navigate(FragmentPaperSexNameSelectionDirections.toScanningSequence())}
 
         commonViewModel.selectedPaper.observe(viewLifecycleOwner, Observer {
@@ -63,8 +63,8 @@ class FragmentPaperSexNameSelection : Fragment(), View.OnClickListener {
 
         })
 
-        commonViewModel.selectedName.observe(viewLifecycleOwner, Observer {
-            fragmentSelectionScanNameInput.setText(commonViewModel.selectedName.value)
+        commonViewModel.selectedScanName.observe(viewLifecycleOwner, Observer {
+            fragmentSelectionScanNameInput.setText(commonViewModel.selectedScanName.value)
         })
     }
 
@@ -132,7 +132,7 @@ class FragmentPaperSexNameSelection : Fragment(), View.OnClickListener {
 
         input.inputType = InputType.TYPE_CLASS_TEXT
         builder.setView(input)
-        builder.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, _ -> commonViewModel.selectedName.value = input.text.toString() })
+        builder.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, _ -> commonViewModel.selectedScanName.value = input.text.toString() })
         builder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, _ -> dialog.cancel() })
 
         builder.show()

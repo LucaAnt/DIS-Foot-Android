@@ -2,6 +2,7 @@ package com.airbag.dis.disfoot.ui.main
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -65,5 +66,10 @@ class FragmentMainShoesListSelection : Fragment() {
 //            }
 
         }
+
+        commonViewModel.scans.observe(viewLifecycleOwner, Observer {
+            for (scan in it)
+                Log.d("SELECTED SHOE",scan.toString())
+        })
     }
 }

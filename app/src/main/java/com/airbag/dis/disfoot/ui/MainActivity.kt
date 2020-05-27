@@ -1,16 +1,10 @@
 package com.airbag.dis.disfoot.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.view.WindowManager
 import androidx.activity.viewModels
-import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.findNavController
+import androidx.appcompat.app.AppCompatActivity
 import com.airbag.dis.disfoot.R
-import com.airbag.dis.disfoot.model.Shoe
 
 class MainActivity : AppCompatActivity() {
     private val commonViewModel: ViewModelCommon by viewModels()

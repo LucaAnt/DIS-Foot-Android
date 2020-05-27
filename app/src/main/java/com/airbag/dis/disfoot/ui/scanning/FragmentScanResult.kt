@@ -1,7 +1,6 @@
 package com.airbag.dis.disfoot.ui.scanning
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,14 +12,10 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.airbag.dis.disfoot.MainNavDirections
 import com.airbag.dis.disfoot.R
-import com.airbag.dis.disfoot.api.disApiManager
-import com.airbag.dis.disfoot.model.MeasureRequest
-import com.airbag.dis.disfoot.model.ShoeSizeMeasure
+import com.airbag.dis.disfoot.model.*
 import com.airbag.dis.disfoot.ui.ViewModelCommon
-import com.airbnb.lottie.LottieAnimationView
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.fragment_scan_result.*
+import java.util.*
 
 
 class FragmentScanResult : Fragment() {
@@ -35,6 +30,7 @@ class FragmentScanResult : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //resetView()
         commonViewModel.getScanResult()
         commonViewModel.currentShoeScanResult.observe(viewLifecycleOwner, Observer {
             if (it!=null)
@@ -48,10 +44,14 @@ class FragmentScanResult : Fragment() {
                 resultAnimation.setAnimation("gotResult.json")
                 resultAnimation.repeatCount = 0
                 resultAnimation.playAnimation()
+
             }
         })
 
-        resultBtnFinish.setOnClickListener { findNavController().navigate(MainNavDirections.toMain())}
+        resultBtnFinish.setOnClickListener {
+            commonViewModel.resetScanSequence()
+            findNavController().navigate(MainNavDirections.toMain())
+        }
 
     }
 
