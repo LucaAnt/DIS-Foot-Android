@@ -1,22 +1,23 @@
-package com.airbag.dis.disfoot.ui.main
+package com.airbag.dis.disfoot.ui.main.mainshoeslist
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager.VERTICAL
 import com.airbag.dis.disfoot.R
 import com.airbag.dis.disfoot.SHARED_PREFERENCES_KEY
 import com.airbag.dis.disfoot.SHARED_PREFERENCES_KEY_REGISTERED
 import com.airbag.dis.disfoot.ui.ViewModelCommon
-import kotlinx.android.synthetic.main.fragment_main_shoes_list_selection.*
+import kotlinx.android.synthetic.main.fragment_main.*
 
 
 class FragmentMainShoesListSelection : Fragment() {
@@ -33,8 +34,7 @@ class FragmentMainShoesListSelection : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main_shoes_list_selection, container, false)
+        return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
 
@@ -67,9 +67,23 @@ class FragmentMainShoesListSelection : Fragment() {
 
         }
 
+        mainRecyclerShoes.adapter = MainShoesListAdapter(listOf())
+        mainRecyclerShoes.layoutManager = LinearLayoutManager(requireContext(), VERTICAL, false)
+
         commonViewModel.scans.observe(viewLifecycleOwner, Observer {
-            for (scan in it)
-                Log.d("SELECTED SHOE",scan.toString())
+            if (it.size > 0)
+                (mainRecyclerShoes.adapter as? MainShoesListAdapter)?.let { adapter ->
+                    adapter.setData(it)
+                    adapter.notifyDataSetChanged()
+                }.also {
+                    mainEmptySection.visibility = GONE
+                    mainRecyclerShoes.visibility = VISIBLE
+                }
+            else {
+                mainEmptySection.visibility = VISIBLE
+                mainRecyclerShoes.visibility = GONE
+            }
+
         })
     }
 }

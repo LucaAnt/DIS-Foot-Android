@@ -43,6 +43,10 @@ class FragmentPickShoe : Fragment() {
                     Toast.makeText(context,"Shoe selected : $id",Toast.LENGTH_LONG).show()
                     findNavController().navigate(FragmentPickShoeDirections.toFragmentScanInstructions())
                 }
+
+                override fun onShoeSelected(id: Int) {
+                    TODO("Not needed")
+                }
             })
             adapter.notifyDataSetChanged()
             //fragmentPickRecycler.adapter = ShoesCollectionAdapter(it).also { it.notifyDataSetChanged() }

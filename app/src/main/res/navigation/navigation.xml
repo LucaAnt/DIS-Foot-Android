@@ -39,9 +39,9 @@
     </fragment>
     <fragment
         android:id="@+id/mainShoesListSelectionFragment"
-        android:name="com.airbag.dis.disfoot.ui.main.FragmentMainShoesListSelection"
+        android:name="com.airbag.dis.disfoot.ui.main.mainshoeslist.FragmentMainShoesListSelection"
         android:label="fragment_main_shoes_list_selection"
-        tools:layout="@layout/fragment_main_shoes_list_selection" >
+        tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/toInfo"
             app:destination="@id/fragmentInfo"
