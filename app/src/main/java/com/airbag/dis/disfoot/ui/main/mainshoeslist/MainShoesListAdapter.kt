@@ -14,11 +14,18 @@ import com.google.android.material.chip.Chip
 
 class MainShoesListAdapter(var shoesList : List<SelectedShoe>) : Adapter<ViewHolderBigCard>()
 {
-    var listener : IShoeSelected? = null
+    private var listener : IShoeSelected? = null
+
+    fun setShoeSelectedListener(listener: IShoeSelected)
+    {
+        this.listener = listener
+    }
     fun setData( shoesList : List<SelectedShoe>)
     {
         this.shoesList = shoesList
     }
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderBigCard {
         return ViewHolderBigCard(LayoutInflater.from(parent.context).inflate(R.layout.cell_shoe_card_big,parent,false))
     }
@@ -43,11 +50,11 @@ class ViewHolderBigCard(itemView: View) : ViewHolder(itemView) {
     )
     {
         this.shoeItem = shoeItem
-        Glide.with(itemView.context).load(this.shoeItem.selectedShoe.imageUri).into(itemView.findViewById(R.id.cardImage));
-        itemView.findViewById<TextView>(R.id.cardShoeName).setText(this.shoeItem.selectedShoe.name)
-        itemView.findViewById<TextView>(R.id.cardType).setText(this.shoeItem.selectedShoe.description)
-        itemView.findViewById<Chip>(R.id.cardChip).setText(this.shoeItem.selectedShoe.last.toString())
-        itemView.findViewById<TextView>(R.id.cardMode).setText(this.shoeItem.selectedShoe.lastName)
+        Glide.with(itemView.context).load(this.shoeItem.selectedShoe.imageUri).into(itemView.findViewById(R.id.cellCardSmallmage));
+        itemView.findViewById<TextView>(R.id.cellCardSmallShoeName).setText(this.shoeItem.selectedShoe.name)
+        itemView.findViewById<TextView>(R.id.cellCardSmallType).setText(this.shoeItem.selectedShoe.description)
+        itemView.findViewById<Chip>(R.id.cellCardSmallChip).setText(this.shoeItem.selectedShoe.last.toString())
+        itemView.findViewById<TextView>(R.id.cellCardSmallMode).setText(this.shoeItem.selectedShoe.lastName)
         itemView.findViewById<TextView>(R.id.cardSize).setText(this.shoeItem.size)
 
         if (this.shoeItem.scanName!="" && this.shoeItem.scanName!=null)

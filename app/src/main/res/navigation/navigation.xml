@@ -56,6 +56,9 @@
         <action
             android:id="@+id/toFragmentPickShoe"
             app:destination="@id/fragmentPickShoe" />
+        <action
+            android:id="@+id/toOtherShoes"
+            app:destination="@id/fragmentOtherShoes" />
     </fragment>
     <fragment
         android:id="@+id/fragmentInfo"
@@ -124,4 +127,14 @@
         android:name="com.airbag.dis.disfoot.ui.scanning.FragmentScanResult"
         android:label="fragment_scan_result"
         tools:layout="@layout/fragment_scan_result" />
+    <fragment
+        android:id="@+id/fragmentOtherShoes"
+        android:name="com.airbag.dis.disfoot.ui.main.other.FragmentOtherShoes"
+        android:label="fragment_other_shoes"
+        tools:layout="@layout/fragment_other_shoes" >
+        <argument
+            android:name="selected_shoe_id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>

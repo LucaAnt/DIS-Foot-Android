@@ -23,7 +23,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/cardImage"
+                android:id="@+id/cellCardSmallmage"
                 android:layout_width="0dp"
                 android:layout_height="126dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +32,7 @@
                 tools:srcCompat="@drawable/card_shoe_placeholder" />
 
             <TextView
-                android:id="@+id/cardShoeName"
+                android:id="@+id/cellCardSmallShoeName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -42,22 +42,24 @@
                 android:textColor="@color/Black"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardImage" />
+                app:layout_constraintTop_toBottomOf="@+id/cellCardSmallmage" />
 
             <TextView
-                android:id="@+id/cardType"
-                android:layout_width="wrap_content"
+                android:id="@+id/cellCardSmallType"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/open_sans"
+                android:lines="1"
                 android:text="Slip On"
                 android:textSize="12sp"
+                app:autoSizeTextType="uniform"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardShoeName" />
+                app:layout_constraintTop_toBottomOf="@+id/cellCardSmallShoeName" />
 
             <TextView
-                android:id="@+id/cardMode"
+                android:id="@+id/cellCardSmallMode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -69,7 +71,7 @@
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/cardChip"
+                android:id="@+id/cellCardSmallChip"
                 android:layout_width="wrap_content"
                 android:layout_height="18dp"
                 android:layout_marginStart="8dp"
@@ -89,7 +91,22 @@
                 app:chipIconTint="@color/White"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardType" />
+                app:layout_constraintTop_toBottomOf="@+id/cellCardSmallType" />
+
+            <TextView
+                android:id="@+id/cellCardSmallNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="33"
+                android:textColor="@color/Black"
+                android:textSize="25sp"
+                android:visibility="visible"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintBottom_toTopOf="@+id/cellCardSmallMode"
+                app:layout_constraintEnd_toEndOf="@+id/cellCardSmallMode" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

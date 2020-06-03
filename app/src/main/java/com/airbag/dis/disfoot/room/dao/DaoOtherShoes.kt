@@ -8,7 +8,7 @@ import com.airbag.dis.disfoot.model.OtherShoe
 interface DaoOtherShoes {
 
     @Query("SELECT * from OTHER_SHOES WHERE selected_shoe_external_id = :externalShoeId")
-    fun getAllOtherShoesForShoeScan(externalShoeId: Long): LiveData<List<OtherShoe>>
+    fun getAllOtherShoesForShoeScan(externalShoeId: Long): List<OtherShoe>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(othetShoes: List<OtherShoe>):Array<Long>

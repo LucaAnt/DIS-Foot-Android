@@ -90,4 +90,9 @@
     <string name="resultFinishedTitle">Final result</string>
     <string name="resultFinishedSubtitle">Your number for the selected model is</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <!-- OTHER SCAN FRAGMENT -->
+    <string name="otherMeasureButtonDelete">Delete</string>
+
 </resources>

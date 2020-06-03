@@ -7,6 +7,7 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -17,6 +18,7 @@ import com.airbag.dis.disfoot.R
 import com.airbag.dis.disfoot.SHARED_PREFERENCES_KEY
 import com.airbag.dis.disfoot.SHARED_PREFERENCES_KEY_REGISTERED
 import com.airbag.dis.disfoot.ui.ViewModelCommon
+import com.airbag.dis.disfoot.ui.scanning.pickshoe.IShoeSelected
 import kotlinx.android.synthetic.main.fragment_main.*
 
 
@@ -73,6 +75,15 @@ class FragmentMainShoesListSelection : Fragment() {
         commonViewModel.scans.observe(viewLifecycleOwner, Observer {
             if (it.size > 0)
                 (mainRecyclerShoes.adapter as? MainShoesListAdapter)?.let { adapter ->
+                   adapter.setShoeSelectedListener(object  : IShoeSelected{
+                       override fun onShoeSelected(id: String) {
+                           TODO("Not yet implemented")
+                       }
+
+                       override fun onShoeSelected(id: Int) {
+                           findNavController().navigate(FragmentMainShoesListSelectionDirections.toOtherShoes(id))
+                       }
+                   })
                     adapter.setData(it)
                     adapter.notifyDataSetChanged()
                 }.also {

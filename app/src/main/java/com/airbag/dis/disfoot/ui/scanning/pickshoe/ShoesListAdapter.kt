@@ -43,11 +43,11 @@ class ShoeListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     )
     {
         this.shoe = shoe
-        Glide.with(itemView.context).load(shoe.imageUri).into(itemView.findViewById(R.id.cardImage));
-        itemView.findViewById<TextView>(R.id.cardShoeName).setText(shoe.name)
-        itemView.findViewById<TextView>(R.id.cardType).setText(shoe.description)
-        itemView.findViewById<Chip>(R.id.cardChip).setText(shoe.last.toString())
-        itemView.findViewById<TextView>(R.id.cardMode).setText(shoe.lastName)
+        Glide.with(itemView.context).load(shoe.imageUri).into(itemView.findViewById(R.id.cellCardSmallmage));
+        itemView.findViewById<TextView>(R.id.cellCardSmallShoeName).setText(shoe.name)
+        itemView.findViewById<TextView>(R.id.cellCardSmallType).setText(shoe.description)
+        itemView.findViewById<Chip>(R.id.cellCardSmallChip).setText(shoe.last.toString())
+        itemView.findViewById<TextView>(R.id.cellCardSmallMode).setText(shoe.lastName)
         if (listener!=null)
             itemView.setOnClickListener { listener.onShoeSelected(shoe.uniqueCode) }
 

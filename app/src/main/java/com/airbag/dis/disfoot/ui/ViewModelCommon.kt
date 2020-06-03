@@ -20,6 +20,8 @@ class ViewModelCommon(application: Application) : AndroidViewModel(application) 
     val scans: LiveData<List<SelectedShoe>> =
         DisRoomDatabase.getDatabase(getApplication()).daoSelectedShoe().getAllSelectedShoes()
 
+    val otherScans : MutableLiveData<Map<String,List<OtherShoe>>> = MutableLiveData(mapOf())
+
 //    fun insertScan(selectedShoe: SelectedShoe){
 //        viewModelScope.launch(Dispatchers.IO) {
 //            DisRoomDatabase.getDatabase(getApplication()).daoSelectedShoe().insert(selectedShoe)
@@ -179,6 +181,27 @@ class ViewModelCommon(application: Application) : AndroidViewModel(application) 
         }
         DisRoomDatabase.getDatabase(getApplication()).daoOtherShoes().insertAll(otherShoesToSave).forEach { Log.d("ADDED Other",it.toString()) }
     }
+
+    suspend fun deleteShoeScan(shoeItem: SelectedShoe) {
+        DisRoomDatabase.getDatabase(getApplication()).daoSelectedShoe().delete(shoeItem)
+        DisRoomDatabase.getDatabase(getApplication()).daoOtherShoes().deleteAll(shoeItem.id.toLong())
+    }
+
+    suspend fun getOtherModelsScan(id : Long){
+        val otherShoes: List<OtherShoe> = DisRoomDatabase.getDatabase(getApplication()).daoOtherShoes().getAllOtherShoesForShoeScan(id)
+        val mappedOtherShoes : MutableMap<String, MutableList<OtherShoe>> = mutableMapOf()
+
+        otherShoes.forEach { currentShoe ->
+            mappedOtherShoes[currentShoe.category]?.let {
+                it.add(currentShoe)
+            } ?: kotlin.run {
+                mappedOtherShoes.put(currentShoe.category, mutableListOf(currentShoe))
+            }
+        }
+        otherScans.postValue(mappedOtherShoes)
+    }
+
+
 
     enum class Feet {
         RIGHT, LEFT
