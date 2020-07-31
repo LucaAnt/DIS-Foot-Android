@@ -85,13 +85,13 @@
             android:gravity="center"
             android:text="@string/boarding_text"
             app:autoSizeTextType="uniform"
-            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintBottom_toTopOf="@+id/fragment_boarding_start_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/fragment_boarding_start_button"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginLeft="43dp"

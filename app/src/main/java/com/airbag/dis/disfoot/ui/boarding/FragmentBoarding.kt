@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.airbag.dis.disfoot.R
+import kotlinx.android.synthetic.main.fragment_boarding.*
 
 
 class FragmentBoarding : Fragment() {
@@ -21,9 +22,12 @@ class FragmentBoarding : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //ToDo: ToRemove Dev Code
-        this.view?.setOnClickListener {
+//        this.view?.setOnClickListener {
+//            findNavController().navigate(R.id.toMainShoesSelection)
+//            print("Boarding page")
+//        }
+        fragment_boarding_start_button.setOnClickListener {
             findNavController().navigate(R.id.toMainShoesSelection)
-            print("Boarding page")
         }
     }
 
